@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wok n Momo | Street-Style Chinese</title>
+<meta name="description" content="Street-style Chinese food with freshly handcrafted momos, bold sauces, and real wok flavour.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --teal: #0F4C4C;
+    --teal-dark: #0B3D3D;
+    --gold: #C9A24D;
+    --cream: #F6F4EF;0B3D3D
+    --text-dark: #1A1A1A;
+    --text-muted: #6b6b6b;
+    --white: #ffffff;
+    --max-width: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    background: linear-gradient(180deg, var(--teal), var(--teal-dark));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 24px 100px;
+}
+
+/* LOGO CENTERED & PROMINENT */
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.hero-logo img {
+    width: 160px;   /* menu-board size */
+    height: auto;
+}
+
+/* TAGLINE */
+.hero p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    color: rgba(255,255,255,0.95);
+}
+
+/* CTA */
+.cta a {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--teal-dark);
+    padding: 14px 38px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+/* ---------- CONTENT ---------- */
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 70px 24px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+}
+
+/* ---------- MENU ---------- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background: var(--white);
+    padding: 26px;
+    border-radius: 12px;
+    border-top: 4px solid var(--gold);
+}
+
+.menu-item h3 {
+    margin-bottom: 8px;
+    color: var(--teal-dark);
+}
+
+.menu-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ---------- WHY ---------- */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.why-grid h3 {
+    color: var(--teal-dark);
+}
+
+/* ---------- SAUCES ---------- */
+.sauce-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.sauce {
+    background: var(--teal-dark);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* ---------- ORDER ---------- */
+.order {
+    background: linear-gradient(180deg, var(--teal-dark), var(--teal));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 24px;
+}
+
+.order a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 30px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: var(--teal-dark);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+}
+
+.footer-grid {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 40px 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .hero-logo img { width: 120px; }
+    .hero p { font-size: 1.05rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO WITH CENTERED LOGO -->
+<section class="hero">
+
+    <div class="hero-logo">
+        <img src="Logo..JPEG" alt="Wok n Momo Logo">
+    </div>
+
+    <p>
+        Street-Style Chinese. Done Right.<br>
+        Freshly handcrafted momos, bold sauces, real wok flavour.
+    </p>
+
+    <div class="cta">
+        <a href="#">Order Now</a>
+    </div>
+
+</section>
+
+<!-- MENU -->
+<section class="container">
+    <div class="section-title">
+        <h2>Signature Favourites</h2>
+        <p>Our most loved picks</p>
+    </div>
+
+    <div class="menu-grid">
+        <div class="menu-item">
+            <h3>Veg Momos</h3>
+            <p>Freshly steamed, soft & juicy.</p>
+        </div>
+        <div class="menu-item">
+            <h3>Chicken Momos</h3>
+            <p>Bold filling with perfect seasoning.</p>
+        </div>
+        <div class="menu-item">
+            <h3>Kurkure Momos</h3>
+            <p>Crispy outside, juicy inside.</p>
+        </div>
+        <div class="menu-item">
+            <h3>Wok Noodles</h3>
+            <p>High flame, real sauces.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHY -->
+<section class="container">
+    <div class="section-title">
+        <h2>Why Wok n Momo?</h2>
+    </div>
+
+    <div class="why-grid">
+        <div>
+            <h3>Freshly Made</h3>
+            <p>No frozen shortcuts.</p>
+        </div>
+        <div>
+            <h3>Bold Flavours</h3>
+            <p>Street-style taste.</p>
+        </div>
+        <div>
+            <h3>Clean Kitchen</h3>
+            <p>Hygiene you can trust.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SAUCES -->
+<section class="container">
+    <div class="section-title">
+        <h2>House-Made Sauces</h2>
+        <p>The real magic is in the dip</p>
+    </div>
+
+    <div class="sauce-list">
+        <div class="sauce">Red Chilli</div>
+        <div class="sauce">Garlic Soy</div>
+        <div class="sauce">Schezwan</div>
+        <div class="sauce">House Special</div>
+    </div>
+</section>
+
+<!-- ORDER -->
+<section class="order">
+    <h2>Order From Your Favourite Platform</h2>
+    <a href="#">Zomato</a>
+    <a href="#">Swiggy</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            © 2024 Wok n Momo<br>
+            Street-Style Chinese
+        </div>
+        <div>
+            Instagram | Phone<br>
+            FSSAI Licensed
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
