@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wok n Momo | Architected QSR Franchise</title>
+    <title>Wok n Momo | Institutional QSR Infrastructure</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -16,185 +16,178 @@
             --cream: #FDFBF7;
             --white: #ffffff;
             --text: #1a1a1a;
+            --swiggy: #FC8019;
+            --zomato: #E23744;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; line-height: 1.6; }
 
-        /* HEADER */
+        /* NAVIGATION */
         header {
-            padding: 10px 5%;
+            padding: 15px 8%;
             display: flex; justify-content: space-between; align-items: center;
             background: var(--white); position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
-        .logo img { height: 91px; }
-        .nav-links a { text-decoration: none; color: var(--teal); font-weight: 600; font-size: 0.85rem; margin-left: 25px; text-transform: uppercase; letter-spacing: 1px; }
-        .btn-investor { background: var(--gold); color: white !important; padding: 10px 20px; border-radius: 4px; }
+        .logo img { height: 70px; width: auto; }
+        .nav-links a { text-decoration: none; color: var(--teal); font-weight: 600; font-size: 0.8rem; margin-left: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-investor { background: var(--gold); color: white !important; padding: 12px 25px; border-radius: 4px; transition: 0.3s; }
+        .btn-investor:hover { background: var(--teal); }
 
-        /* HERO - THE "SYSTEMS" PITCH */
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(15, 76, 76, 0.9), rgba(15, 76, 76, 0.9)), 
-                        url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(15, 76, 76, 0.85), rgba(15, 76, 76, 0.85)), 
+                        url('https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
-            padding: 120px 10%; color: white; text-align: center;
+            padding: 140px 10% 100px; color: white; text-align: center;
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 20px; line-height: 1.2; }
-        .hero p { max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; opacity: 0.9; border-bottom: 1px solid var(--gold); padding-bottom: 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 20px; }
+        .hero p { max-width: 750px; margin: 0 auto 40px; font-size: 1.1rem; opacity: 0.9; line-height: 1.8; }
 
-        /* STATS BAR */
-        .stats-bar {
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-main { background: var(--gold); color: white; padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn-sec { background: transparent; color: white; border: 1px solid white; padding: 18px 30px; text-decoration: none; font-weight: 600; border-radius: 4px; text-transform: uppercase; transition: 0.3s; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn-sec:hover { background: white; color: var(--teal); }
+
+        /* STATS */
+        .stats-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px; background: var(--white); padding: 40px; margin-top: -60px;
-            width: 85%; margin-left: auto; margin-right: auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 8px;
+            background: var(--white); width: 85%; margin: -50px auto 0;
+            padding: 40px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            text-align: center;
         }
-        .stat-item { text-align: center; border-right: 1px solid #eee; }
-        .stat-item:last-child { border: none; }
-        .stat-value { display: block; font-size: 1.8rem; font-weight: 700; color: var(--teal); }
-        .stat-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .stat-card h4 { font-size: 1.8rem; color: var(--teal); margin-bottom: 5px; }
+        .stat-card p { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* GOVERNANCE SECTION */
+        /* SECTIONS */
         section { padding: 100px 10%; }
-        .section-label { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; display: block; margin-bottom: 10px; text-align: center; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: var(--teal); }
+        .label { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; font-weight: 700; display: block; margin-bottom: 10px; text-align: center; }
+        .title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--teal); text-align: center; margin-bottom: 60px; }
 
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card { background: var(--white); padding: 40px; border-radius: 12px; border: 1px solid #f0f0f0; transition: 0.3s; }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-        .feature-card h3 { color: var(--teal); margin-bottom: 15px; font-size: 1.3rem; }
-        .feature-card p { font-size: 0.9rem; color: #555; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 45px; border-radius: 12px; border: 1px solid #f0f0f0; transition: 0.3s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .card h3 { color: var(--teal); margin-bottom: 20px; font-size: 1.4rem; }
+        .card p { font-size: 0.9rem; color: #666; }
 
-        /* INVESTMENT FORMATS */
-        .format-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .format-card { 
-            background: var(--teal); color: white; padding: 40px; border-radius: 12px; 
-            text-align: center; position: relative; overflow: hidden;
-        }
-        .format-card.premium { background: var(--gold); }
-        .format-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
-        .format-price { font-size: 2rem; font-weight: 700; margin-bottom: 20px; display: block; }
-        .format-tag { font-size: 0.7rem; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; }
+        /* DARK SECTION - GOVERNANCE */
+        .governance { background: var(--teal-dark); color: white; }
+        .governance .title { color: var(--gold); }
+        .gov-item { border-left: 2px solid var(--gold); padding-left: 25px; margin-bottom: 40px; }
 
-        /* CALL TO ACTION */
-        .cta-section { background: var(--teal-dark); color: white; text-align: center; padding: 80px 10%; }
-        .btn-large { 
-            display: inline-block; background: var(--gold); color: white; padding: 20px 50px; 
-            text-decoration: none; font-weight: 700; border-radius: 4px; margin-top: 30px; 
-            transition: 0.3s; text-transform: uppercase;
-        }
-        .btn-large:hover { background: #b8923d; transform: scale(1.05); }
+        /* FORMATS */
+        .format-card { background: var(--teal); color: white; padding: 50px 30px; border-radius: 12px; text-align: center; transition: 0.3s; }
+        .format-card.featured { background: var(--gold); transform: scale(1.05); }
+        .price { font-size: 2.2rem; font-weight: 700; display: block; margin: 20px 0; }
 
-        footer { background: #051a1a; color: rgba(255,255,255,0.5); padding: 40px 10%; text-align: center; font-size: 0.8rem; }
+        /* FOOTER */
+        footer { background: #051a1a; color: rgba(255,255,255,0.6); padding: 60px 10% 30px; text-align: center; }
+        .order-links { margin: 30px 0; display: flex; justify-content: center; gap: 20px; }
+        .order-btn { padding: 10px 20px; border-radius: 20px; text-decoration: none; color: white; font-weight: 600; font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .stats-bar { grid-template-columns: 1fr; margin-top: -30px; }
-            .stat-item { border-right: none; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        }
+        @media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr; } .format-card.featured { transform: scale(1); } }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">
-        <img src="Logo 2@4x.png" alt="Wok n Momo">
-    </div>
+    <div class="logo"><img src="Logo 2@4x.png" alt="Wok n Momo"></div>
     <nav class="nav-links">
-        <a href="#governance">Our Systems</a>
-        <a href="#formats">Formats</a>
-        <a href="https://wa.me/919599949996" class="btn-investor">Franchise Inquiry</a>
+        <a href="#systems">The Infrastructure</a>
+        <a href="#formats">Investment</a>
+        <a href="https://wa.me/919599949996" class="btn-investor">Partner With Us</a>
     </nav>
 </header>
 
 <div class="hero">
-    <h1 data-aos="fade-up">The Architecture of a <br>Scalable QSR Empire</h1>
-    <p data-aos="fade-up" data-aos-delay="200">Wok n Momo isn't just a kitchen; it's a high-throughput financial system built on institutional-grade unit economics and central kitchen efficiency.</p>
-    
-    <div style="display: flex; gap: 15px; justify-content: center;" data-aos="fade-up" data-aos-delay="400">
-        <a href="#formats" class="btn-large" style="margin-top:0;">Explore Models</a>
-        <a href="#" style="color: white; text-decoration: none; align-self: center; font-weight: 600; border-bottom: 1px solid var(--gold);">Order Online</a>
+    <h1 data-aos="fade-up">Institutionalizing the <br>Future of Asian QSR</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Wok n Momo is a high-yield, chef-independent QSR model engineered for national scalability through central kitchen governance.</p>
+    <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://wa.me/919599949996" class="btn-main">Request Franchise Brief</a>
+        <a href="#formats" class="btn-sec">View Formats</a>
     </div>
 </div>
 
-<div class="stats-bar" data-aos="zoom-in">
-    <div class="stat-item">
-        <span class="stat-value">6-8 Months</span>
-        <span class="stat-label">Target Payback</span>
-    </div>
-    <div class="stat-item">
-        <span class="stat-value">35% +</span>
-        <span class="stat-label">Gross Margins</span>
-    </div>
-    <div class="stat-item">
-        <span class="stat-value">100%</span>
-        <span class="stat-label">Supply Chain Control</span>
-    </div>
-    <div class="stat-item">
-        <span class="stat-value">Zero</span>
-        <span class="stat-label">Chef Dependency</span>
-    </div>
+<div class="stats-grid" data-aos="zoom-in">
+    <div class="stat-card"><h4>6-8 Months</h4><p>Target ROI Period*</p></div>
+    <div class="stat-card"><h4>35% +</h4><p>Gross Margin Potential</p></div>
+    <div class="stat-card"><h4>100%</h4><p>Standardized Supply</p></div>
+    <div class="stat-card"><h4>Zero</h4><p>Chef Dependency</p></div>
 </div>
 
-<section id="governance">
-    <span class="section-label">Institutional Foundation</span>
-    <h2 class="section-title">Built with Systems. Not Shortcuts.</h2>
-    
-    <div class="feature-grid">
-        <div class="feature-card" data-aos="fade-up">
-            <h3>Central Kitchen Mastery</h3>
-            <p>Standardized sauces and fillings ensure 100% taste consistency across all outlets, reducing on-site labor costs by 40%.</p>
+<section id="systems">
+    <span class="label">The Architecture</span>
+    <h2 class="title">Systemized Profitability</h2>
+    <div class="grid">
+        <div class="card" data-aos="fade-up">
+            <h3>Centralized Production</h3>
+            <p>Our proprietary central kitchen eliminates on-site prep, ensuring that a momo in Delhi tastes identical to one in Bangalore.</p>
         </div>
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>High-Throughput Design</h3>
-            <p>Kitchen workflows architected for maximum order density, ensuring rapid fulfillment during peak Swiggy/Zomato surges.</p>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3>High-Density Fulfillment</h3>
+            <p>Layouts optimized for "Kitchen Velocity"—designed to handle 100+ delivery orders per peak hour without bottlenecks.</p>
         </div>
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
             <h3>Inventory Governance</h3>
-            <p>Institutional SOPs for waste management and inventory tracking, ensuring every gram of margin is protected.</p>
+            <p>Digital tracking and audit rhythms that prevent leakage and ensure your margins stay in your pocket.</p>
         </div>
     </div>
 </section>
 
-<section id="formats" style="background: #f4f1ea;">
-    <span class="section-label">Investment Architecture</span>
-    <h2 class="section-title">Scalable Franchise Models</h2>
-    
-    <div class="format-grid">
-        <div class="format-card" data-aos="flip-left">
-            <span class="format-tag">Delivery Focused</span>
+<section class="governance">
+    <span class="label" style="color: var(--white); opacity: 0.6;">The "Steady Hands" Factor</span>
+    <h2 class="title">Governance & Support</h2>
+    <div class="grid">
+        <div class="gov-item" data-aos="fade-right">
+            <h4>Daily Review Rhythms (DRR)</h4>
+            <p style="opacity: 0.8; font-size: 0.9rem;">We don't just sign a lease; we implement daily performance tracking to ensure unit economics stay healthy.</p>
+        </div>
+        <div class="gov-item" data-aos="fade-right" data-aos-delay="100">
+            <h4>Quarterly Compliance Audits</h4>
+            <p style="opacity: 0.8; font-size: 0.9rem;">Strict hygiene and brand-standard audits to protect the long-term equity of your investment.</p>
+        </div>
+        <div class="gov-item" data-aos="fade-right" data-aos-delay="200">
+            <h4>Technology Backbone</h4>
+            <p style="opacity: 0.8; font-size: 0.9rem;">Integrated POS and supply chain software for 100% transparency, even when you aren't at the outlet.</p>
+        </div>
+    </div>
+</section>
+
+<section id="formats">
+    <span class="label">Investment Models</span>
+    <h2 class="title">Tailored Scaling</h2>
+    <div class="grid">
+        <div class="format-card" data-aos="fade-up">
             <h3>Cloud Kitchen</h3>
-            <span class="format-price">₹4–6 Lakhs</span>
-            <p style="font-size: 0.8rem; opacity: 0.8;">Low overhead, high-density residential reach.</p>
+            <span class="price">₹4–6 L</span>
+            <p>Maximum delivery reach with minimal overhead. Ideal for Tier 1 expansion.</p>
         </div>
-        <div class="format-card premium" data-aos="flip-left" data-aos-delay="100">
-            <span class="format-tag">Popular Choice</span>
-            <h3>Kiosk Model</h3>
-            <span class="format-price">₹5–8 Lakhs</span>
-            <p style="font-size: 0.8rem; opacity: 0.8;">High visibility, high footfall, minimal carpet area.</p>
+        <div class="format-card featured" data-aos="fade-up" data-aos-delay="100">
+            <h3>Smart Kiosk</h3>
+            <span class="price">₹5–8 L</span>
+            <p>The "High-Visibility" model. Perfect for malls, tech parks, and high-street corners.</p>
         </div>
-        <div class="format-card" data-aos="flip-left" data-aos-delay="200">
-            <span class="format-tag">Full Brand Experience</span>
+        <div class="format-card" data-aos="fade-up" data-aos-delay="200">
             <h3>Retail Outlet</h3>
-            <span class="format-price">₹8–12 Lakhs</span>
-            <p style="font-size: 0.8rem; opacity: 0.8;">Maximum brand impact and dine-in revenue.</p>
+            <span class="price">₹8–12 L</span>
+            <p>Complete brand experience with seating. Designed for high-frequency hubs.</p>
         </div>
     </div>
 </section>
-
-<div class="cta-section">
-    <h2>Secure Your Territory</h2>
-    <p style="opacity: 0.8; margin-top: 15px;">We are selectively partnering with individuals who value structural growth.</p>
-    <a href="https://wa.me/919599949996?text=I%20want%20to%20discuss%20the%20Wok%20n%20Momo%20Investment%20Model" class="btn-large">Download Franchise Deck</a>
-</div>
 
 <footer>
-    <p>© 2026 WOK N MOMO. Architected by Sanju Gupta Growth Systems.</p>
+    <div class="logo"><img src="Logo 2@4x.png" alt="Wok n Momo" style="filter: brightness(0) invert(1); height: 50px;"></div>
+    <div class="order-links">
+        <a href="#" class="order-btn" style="background: var(--swiggy);">Swiggy</a>
+        <a href="#" class="order-btn" style="background: var(--zomato);">Zomato</a>
+    </div>
+    <p>© 2026 WOK N MOMO | An Institutional Growth Brand</p>
+    <p style="font-size: 0.65rem; margin-top: 15px; opacity: 0.5;">*Financial metrics are based on internal audits and location performance. Past performance is not indicative of future results.</p>
 </footer>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 1000, once: true });
-</script>
-
+<script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
