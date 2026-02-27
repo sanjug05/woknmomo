@@ -290,7 +290,6 @@ Request Franchise Brief
     <span class="label">Currently Onboarding</span>
     <h2 class="title">Expansion Focus 2026</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-        </div>
         <div style="background: white; padding: 30px; border-radius: 8px; border: 1px solid #eee;">
             <h4>Delhi NCR</h4>
             <p style="color: #666; margin-top: 10px;">
@@ -310,6 +309,7 @@ Request Franchise Brief
             <p style="color: #666; margin-top: 10px;">
             Central kitchen governed delivery territories.
             </p>
+            </div>
         </div>
 </section>
     <section>
@@ -347,20 +347,33 @@ Request Franchise Brief
     function closeModal() { document.getElementById('leadModal').style.display = 'none'; }
 
     function sendToWhatsApp() {
-        const name = document.getElementById('leadName').value;
-        const city = document.getElementById('leadCity').value;
-        const purpose = document.getElementById('modalTitle').innerText;
-        let choice = (purpose === 'Franchise Brief Request') 
-            ? `Investment Model: ${document.getElementById('leadInvestment').value}`
-            : `Inquiry Type: ${document.getElementById('leadGeneral').value}`;
+    const name = document.getElementById('leadName').value;
+    const city = document.getElementById('leadCity').value;
+    const purpose = document.getElementById('modalTitle').innerText;
 
-        if(!name || !city) { alert("Please fill in your details."); return; }
+    let choice = (purpose === 'Franchise Brief Request') 
+        ? `Investment Model: ${document.getElementById('leadInvestment').value}`
+        : `Inquiry Type: ${document.getElementById('leadGeneral').value}`;
 
-        const message = `Hi Wok n Momo! %0A%0A*${purpose}*%0A*Name:* ${name}%0A*City:* ${city}%0A*${choice}*%0A%0AI would like to discuss this further.`;
-        window.open(`https://wa.me/919599949996?text=${message}`, '_blank');
-        closeModal();
+    if(!name || !city) { 
+        alert("Please fill in your details."); 
+        return; 
     }
 
+    const message = encodeURIComponent(
+`Hi Wok n Momo!
+
+${purpose}
+Name: ${name}
+City: ${city}
+${choice}
+
+I would like to discuss this further.`
+    );
+
+    window.open(`https://wa.me/919599949996?text=${message}`, '_blank');
+    closeModal();
+}
     window.onload = () => { showView(localStorage.getItem('wnm_view') || 'customer'); };
 
     function togglePerspective() {
