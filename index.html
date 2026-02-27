@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wok n Momo | Institutional QSR Infrastructure</title>
+    <title>Wok n Momo | Taste the Magic & Partner with Us</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -23,199 +23,189 @@
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
 
-        /* GATEWAY OVERLAY */
-        #roleSelector {
-            position: fixed; inset: 0; z-index: 10000; display: flex;
-            transition: 1s cubic-bezier(0.85, 0, 0.15, 1);
+        /* PREMIUM HEADER */
+        header {
+            padding: 15px 8%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 30px rgba(0,0,0,0.05);
         }
-        .gateway-half {
-            width: 50%; height: 100%; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; position: relative;
-            transition: 0.6s ease; cursor: pointer; padding: 40px; text-align: center;
+        .logo img { height: 60px; cursor: pointer; }
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .partner-btn { 
+            background: var(--teal); color: white; padding: 12px 25px; 
+            border-radius: 4px; text-decoration: none; font-weight: 700; 
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+            transition: 0.3s; border: 2px solid var(--teal); cursor: pointer;
         }
-        .customer-side { 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1563245339-6b2e44c752ff?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover; background-position: center; border-right: 1px solid rgba(255,255,255,0.2);
+        .partner-btn:hover { background: transparent; color: var(--teal); }
+
+        /* COMMON SECTION STYLES */
+        .hidden { display: none; }
+        section { padding: 100px 10%; position: relative; }
+        .label { color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; display: block; margin-bottom: 15px; }
+        .title { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin-bottom: 40px; color: var(--teal); line-height: 1.1; }
+
+        /* CUSTOMER VIEW - HERO */
+        .hero-cust { 
+            height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; color: white;
         }
-        .investor-side { 
-            background: linear-gradient(rgba(15,76,76,0.95), rgba(15,76,76,1)), 
-                        url('https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1920&q=80');
+        .order-btn { padding: 18px 40px; border-radius: 4px; text-decoration: none; font-weight: 700; color: white; transition: 0.3s; margin: 10px; text-transform: uppercase; }
+
+        /* MENU CARDS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .food-card { background: white; padding: 30px; border-radius: 8px; border: 1px solid #eee; transition: 0.3s; }
+        .food-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .food-img { height: 250px; background-size: cover; background-position: center; border-radius: 6px; margin-bottom: 20px; }
+
+        /* INVESTOR VIEW - HERO */
+        .hero-inv { 
+            padding: 160px 10% 120px; color: white;
+            background: linear-gradient(rgba(15,76,76,0.92), rgba(15,76,76,0.92)), 
+                        url('https://thumbs.dreamstime.com/b/mcdonald-s-restaurant-hong-kong-china-circa-january-counter-service-174373211.jpg');
             background-size: cover; background-position: center;
         }
-        .gateway-half:hover { width: 55%; }
-        .gateway-half h2 { font-family: 'Playfair Display', serif; color: white; font-size: 3rem; margin-bottom: 15px; line-height: 1.1; }
-        .gate-btn { padding: 18px 45px; border-radius: 4px; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
-
-        /* HEADER */
-        header {
-            padding: 12px 8%; display: flex; justify-content: space-between; align-items: center;
-            background: white; position: sticky; top: 0; z-index: 900; box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+        .stat-ticker { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            background: white; border-radius: 8px; margin-top: -80px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
+            overflow: hidden; position: relative; z-index: 10;
         }
-        .logo img { height: 65px; }
-        .view-switcher { font-size: 0.7rem; font-weight: 800; color: var(--gold); border: 2px solid var(--gold); padding: 10px 20px; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
+        .stat-item { padding: 40px; text-align: center; border-right: 1px solid #f0f0f0; }
+        .stat-item h4 { font-size: 2.2rem; color: var(--teal); font-family: 'Playfair Display'; margin-bottom: 5px; }
+        .stat-item p { font-size: 0.7rem; font-weight: 800; color: #999; text-transform: uppercase; }
 
-        /* SECTIONS & TYPOGRAPHY */
-        .hidden { display: none; }
-        section { padding: 100px 10%; }
-        .label { color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; display: block; margin-bottom: 15px; }
-        .title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 40px; color: var(--teal); line-height: 1.2; }
-        
-        /* CARDS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: white; padding: 45px; border-radius: 8px; border: 1px solid #eee; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
-        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .inv-card { background: white; padding: 45px; border-radius: 8px; border-left: 5px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
 
-        /* INVESTOR DASHBOARD */
-        .hero-inv { background: linear-gradient(rgba(15,76,76,0.9), rgba(15,76,76,0.9)), url('https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; color: white; padding: 160px 10%; }
-        .stat-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); background: white; margin-top: -80px; border-radius: 8px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); overflow: hidden; }
-        .stat-box { padding: 45px; text-align: center; border-right: 1px solid #f0f0f0; }
-        .stat-box h3 { color: var(--teal); font-size: 2.2rem; margin-bottom: 8px; }
-        .stat-box p { font-size: 0.75rem; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+        /* MODELS */
+        .model-card { background: var(--teal); color: white; padding: 60px 40px; border-radius: 12px; text-align: center; transition: 0.3s; }
+        .model-card.featured { background: var(--gold); transform: scale(1.05); }
+        .price { font-size: 2.8rem; font-weight: 700; display: block; margin: 20px 0; }
 
-        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .model-card { background: var(--teal); color: white; padding: 60px 40px; border-radius: 12px; text-align: center; transition: 0.4s; }
-        .model-card.featured { background: var(--gold); transform: scale(1.05); z-index: 2; }
-        .price-tag { font-size: 2.8rem; font-weight: 700; display: block; margin: 20px 0; }
-
-        /* CUSTOMER DASHBOARD */
-        .hero-cust { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 180px 10%; }
-        .food-img { height: 280px; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 30px; }
-        .btn-brand { padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 4px; display: inline-block; margin: 10px; color: white; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
-
-        footer { background: #041616; padding: 60px 10%; text-align: center; color: rgba(255,255,255,0.4); }
+        footer { background: #051a1a; padding: 60px 10%; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
 
         @media (max-width: 768px) {
-            #roleSelector { flex-direction: column; }
-            .gateway-half { width: 100%; height: 50%; }
+            .title { font-size: 2.5rem; }
+            .hero-cust { height: 60vh; }
             .model-card.featured { transform: scale(1); }
-            .title { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-<div id="roleSelector">
-    <div class="gateway-half customer-side" onclick="loadView('customer')">
-        <span class="label" style="color: white;">For The Hungry</span>
-        <h2>TASTE THE <br> MOMO MAGIC</h2>
-        <button class="gate-btn" style="background: white; color: var(--teal);">Order Online</button>
+<header>
+    <div class="logo" onclick="showView('customer')"><img src="Logo 2@4x.PNG" alt="Wok n Momo"></div>
+    <div class="nav-links">
+        <a id="toggleLink" class="partner-btn" onclick="togglePerspective()">Partner With Us</a>
     </div>
-    <div class="gateway-half investor-side" onclick="loadView('investor')">
-        <span class="label" style="color: var(--gold);">For The Visionary</span>
-        <h2>OWN THE <br> INFRASTRUCTURE</h2>
-        <button class="gate-btn" style="background: var(--gold); color: white;">View Prospectus</button>
-    </div>
-</div>
-
-<header id="mainHeader" class="hidden">
-    <div class="logo"><img src="Logo 2@4x.PNG" alt="Wok n Momo"></div>
-    <div id="viewToggle" class="view-switcher" onclick="toggleRole()">Switch Perspective</div>
 </header>
 
-<div id="customerView" class="hidden">
+<div id="customerContent">
     <section class="hero-cust">
-        <h1 class="title" style="color: white; font-size: 4rem;">Fresh. Bold. <br><span style="color: var(--gold);">Street Soul.</span></h1>
+        <span class="label" style="color: white; opacity: 0.8;">The Best Momos in Town</span>
+        <h1 class="title" style="color: white; font-size: 4rem;">Fresh. Bold. <span style="color: var(--gold);">Street Soul.</span></h1>
         <p style="margin-bottom: 45px; opacity: 0.95; font-size: 1.2rem; max-width: 700px; margin-left: auto; margin-right: auto;">Authentic wok-fired Asian favorites and handcrafted momos delivered hot to your doorstep.</p>
-        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="#" class="btn-brand" style="background: var(--swiggy);">Order on Swiggy</a>
-            <a href="#" class="btn-brand" style="background: var(--zomato);">Order on Zomato</a>
+        <div style="margin-top: 20px;">
+            <a href="#" class="order-btn" style="background: var(--swiggy);">Order via Swiggy</a>
+            <a href="#" class="order-btn" style="background: var(--zomato);">Order via Zomato</a>
+
         </div>
     </section>
 
     <section>
-        <span class="label">Fan Favorites</span>
+        <span class="label">Our Signature Flavors</span>
         <h2 class="title">The Signature Lineup</h2>
         <div class="grid">
-            <div class="card" data-aos="fade-up">
+            <div class="food-card" data-aos="fade-up">
                 <div class="food-img" style="background-image: url('https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=800&q=80');"></div>
                 <h3>Classic Steam Momos</h3>
-                <p>Thin-wrapped, juicy fillings, served with our signature spicy chutney.</p>
+                <p style="color: #666; margin-top: 10px;">Thin-wrapped, juicy fillings, served with our signature spicy chutney. The original masterpiece.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <div class="food-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="food-img" style="background-image: url('https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80');"></div>
                 <h3>Wok-Fired Noodles</h3>
-                <p>High-heat smokiness tossed with fresh seasonal veggies and secret house sauces.</p>
+                <p style="color: #666; margin-top: 10px;">Smoky, high-heat noodles tossed with fresh seasonal veggies and our secret house sauces.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <div class="food-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="food-img" style="background-image: url('https://billusfood.com/wp-content/uploads/2025/02/images-4-1.jpeg');"></div>
                 <h3>Crispy Kurkure Momos</h3>
-                <p>The ultimate street-style crunch. Double-breaded and golden fried for the perfect bite.</p>
+                <p style="color: #666; margin-top: 10px;">The ultimate street crunch. Double-breaded, golden fried, and seasoned to perfection.</p>
             </div>
         </div>
     </section>
 </div>
 
-<div id="investorView" class="hidden">
+<div id="investorContent" class="hidden">
     <section class="hero-inv">
-        <span class="label" style="color: var(--gold);">Expansion Opportunity</span>
-        <h1 class="title" style="color: white;">Institutionalizing the <br>Future of Asian QSR</h1>
-        <p style="max-width: 750px; opacity: 0.9; font-size: 1.15rem; margin-bottom: 45px;">Wok n Momo is a high-yield, chef-independent QSR model engineered for national scalability through central kitchen governance.</p>
-        <a href="https://wa.me/919599949996" class="gate-btn" style="background: var(--gold); color: white; text-decoration: none;">Request Franchise Brief</a>
+        <span class="label" style="color: var(--gold);">Institutional Growth</span>
+        <h1 class="title" style="color: white;">Architecting the Future <br>of Asian QSR.</h1>
+        <p style="max-width: 700px; opacity: 0.9; font-size: 1.2rem; margin-bottom: 40px;">Wok n Momo is a high-yield, chef-independent model engineered for national scalability through rigorous central kitchen governance.</p>
+        <a href="https://wa.me/919599949996" class="partner-btn" style="background: var(--gold); border-color: var(--gold);">Download Prospectus</a>
     </section>
 
-    <div class="stat-bar" data-aos="zoom-in">
-        <div class="stat-box"><h3>6-8 Months</h3><p>Target ROI Period</p></div>
-        <div class="stat-box"><h3>35% +</h3><p>Gross Margin Potential</p></div>
-        <div class="stat-box"><h3>100%</h3><p>Standardized Supply</p></div>
-        <div class="stat-box" style="border:none;"><h3>Zero</h3><p>Chef Dependency</p></div>
+    <div class="stat-ticker" data-aos="zoom-in">
+        <div class="stat-item"><h4>6-8 Mo.</h4><p>Target ROI Period</p></div>
+        <div class="stat-item"><h4>35% +</h4><p>Gross Margin</p></div>
+        <div class="stat-item"><h4>100%</h4><p>Standardized Supply</p></div>
+        <div class="stat-item" style="border:none;"><h4>Zero</h4><p>Chef Dependency</p></div>
     </div>
 
     <section>
         <span class="label">The Architecture</span>
         <h2 class="title">Systemized Profitability</h2>
         <div class="grid">
-            <div class="card" data-aos="fade-up">
-                <h4 style="color: var(--teal); margin-bottom: 15px;">Centralized Production</h4>
-                <p>Our proprietary central kitchen eliminates on-site prep, ensuring consistency across every single territory.</p>
+            <div class="inv-card" data-aos="fade-up">
+                <h3>Centralized Production</h3>
+                <p style="color: #666; margin-top: 15px;">Our proprietary central kitchen eliminates on-site prep, ensuring a momo in Delhi tastes identical to one in Bangalore.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="color: var(--teal); margin-bottom: 15px;">High-Density Fulfillment</h4>
-                <p>Layouts optimized for "Kitchen Velocity"—designed to handle 100+ delivery orders per peak hour.</p>
+            <div class="inv-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>High-Density Fulfillment</h3>
+                <p style="color: #666; margin-top: 15px;">Layouts optimized for "Kitchen Velocity"—designed to handle 100+ delivery orders per peak hour without bottlenecks.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <h4 style="color: var(--teal); margin-bottom: 15px;">Inventory Governance</h4>
-                <p>Digital tracking and audit rhythms that prevent leakage and ensure your margins stay in your pocket.</p>
+            <div class="inv-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Inventory Governance</h3>
+                <p style="color: #666; margin-top: 15px;">Digital tracking and daily audit rhythms that prevent leakage and ensure your margins stay in your pocket.</p>
             </div>
         </div>
     </section>
 
     <section style="background: var(--teal-dark); color: white;">
-        <span class="label">THE "STEADY HANDS" FACTOR</span>
+        <span class="label">The "Steady Hands" Factor</span>
         <h2 class="title" style="color: white;">Governance & Support</h2>
         <div class="grid">
-            <div style="border-left: 3px solid var(--gold); padding-left: 25px;" data-aos="fade-right">
-                <h4 style="margin-bottom: 10px;">Daily Review Rhythms (DRR)</h4>
-                <p style="opacity: 0.8;">We implement daily performance tracking to ensure unit economics stay healthy and predictable.</p>
+            <div style="border-left: 2px solid var(--gold); padding-left: 25px;" data-aos="fade-right">
+                <h4>Daily Review Rhythms (DRR)</h4>
+                <p style="opacity: 0.8; margin-top: 10px;">We implement daily performance tracking to ensure unit economics stay healthy and predictable.</p>
             </div>
-            <div style="border-left: 3px solid var(--gold); padding-left: 25px;" data-aos="fade-right" data-aos-delay="100">
-                <h4 style="margin-bottom: 10px;">Quarterly Compliance Audits</h4>
-                <p style="opacity: 0.8;">Strict hygiene and brand-standard audits to protect the long-term equity of your investment.</p>
+            <div style="border-left: 2px solid var(--gold); padding-left: 25px;" data-aos="fade-right" data-aos-delay="100">
+                <h4>Quarterly Compliance Audits</h4>
+                <p style="opacity: 0.8; margin-top: 10px;">Strict hygiene and brand-standard audits to protect the long-term equity of your investment.</p>
             </div>
-            <div style="border-left: 3px solid var(--gold); padding-left: 25px;" data-aos="fade-right" data-aos-delay="200">
-                <h4 style="margin-bottom: 10px;">Technology Backbone</h4>
-                <p style="opacity: 0.8;">Integrated POS and supply chain software for 100% transparency, even when you aren't at the outlet.</p>
+            <div style="border-left: 2px solid var(--gold); padding-left: 25px;" data-aos="fade-right" data-aos-delay="200">
+                <h4>Technology Backbone</h4>
+                <p style="opacity: 0.8; margin-top: 10px;">Integrated POS and supply chain software for 100% transparency, even when you aren't at the outlet.</p>
             </div>
         </div>
     </section>
 
     <section>
-        <span class="label">INVESTMENT MODELS</span>
-        <h2 class="title">Tailored Scaling</h2>
-        <div class="model-grid">
+        <span class="label">Tailored Scaling</span>
+        <h2 class="title">Investment Models</h2>
+        <div class="grid">
             <div class="model-card" data-aos="fade-up">
                 <h3>Cloud Kitchen</h3>
-                <span class="price-tag">4-6L</span>
+                <span class="price">4-6L</span>
                 <p>Maximum delivery reach with minimal overhead. Ideal for Tier 1 expansion.</p>
             </div>
             <div class="model-card featured" data-aos="fade-up" data-aos-delay="100">
                 <h3>Smart Kiosk</h3>
-                <span class="price-tag">5-8L</span>
-                <p>The "High-Visibility" model. Perfect for malls, tech parks, and high-street corners.</p>
+                <span class="price">5-8L</span>
+                <p>High-visibility model. Perfect for malls, tech parks, and high-street corners.</p>
             </div>
             <div class="model-card" data-aos="fade-up" data-aos-delay="200">
                 <h3>Retail Outlet</h3>
-                <span class="price-tag">8-12 L</span>
+                <span class="price">8-12 L</span>
                 <p>Complete brand experience with seating. Designed for high-frequency hubs.</p>
             </div>
         </div>
@@ -224,44 +214,42 @@
 
 <footer>
     <p>© 2026 WOK N MOMO | An Institutional Growth Brand</p>
-    <p style="margin-top: 15px; font-size: 0.7rem; opacity: 0.6; max-width: 600px; margin-left: auto; margin-right: auto;">
-        Financial metrics are based on internal audits and location performance. Past performance is not indicative of future results.
-    </p>
+    <p style="margin-top: 15px; opacity: 0.5; max-width: 600px; margin: 15px auto 0;">Financial metrics are based on internal audits and location performance. Past performance is not indicative of future results.</p>
 </footer>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });
-    
-    function loadView(view) {
-        document.getElementById('roleSelector').style.transform = 'translateY(-100%)';
-        setTimeout(() => {
-            document.getElementById('roleSelector').style.display = 'none';
-            document.getElementById('mainHeader').classList.remove('hidden');
-            renderContent(view);
-        }, 800);
-    }
 
-    function renderContent(view) {
-        window.scrollTo(0,0);
-        const c = document.getElementById('customerView');
-        const i = document.getElementById('investorView');
-        const t = document.getElementById('viewToggle');
-
-        if (view === 'customer') {
-            c.classList.remove('hidden');
-            i.classList.add('hidden');
-            t.innerText = 'Investor Portal';
+    function togglePerspective() {
+        const isCustomer = !document.getElementById('customerContent').classList.contains('hidden');
+        if (isCustomer) {
+            showView('investor');
         } else {
-            i.classList.remove('hidden');
-            c.classList.add('hidden');
-            t.innerText = 'Back to Store';
+            showView('customer');
         }
     }
 
-    function toggleRole() {
-        const isCurrentlyCustomer = !document.getElementById('customerView').classList.contains('hidden');
-        renderContent(isCurrentlyCustomer ? 'investor' : 'customer');
+    function showView(view) {
+        window.scrollTo(0,0);
+        const cust = document.getElementById('customerContent');
+        const inv = document.getElementById('investorContent');
+        const btn = document.getElementById('toggleLink');
+
+        if (view === 'customer') {
+            cust.classList.remove('hidden');
+            inv.classList.add('hidden');
+            btn.innerText = 'Partner With Us';
+            btn.style.background = 'var(--teal)';
+        } else {
+            cust.classList.add('hidden');
+            inv.classList.remove('hidden');
+            btn.innerText = 'Back to Store';
+            btn.style.background = 'var(--gold)';
+            btn.style.borderColor = 'var(--gold)';
+        }
+        // Re-trigger AOS for the newly visible section
+        AOS.refresh();
     }
 </script>
 
