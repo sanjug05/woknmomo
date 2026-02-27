@@ -134,11 +134,11 @@
             <input type="text" id="leadCity" placeholder="Target location">
         </div>
         <div class="form-group">
-            <label>Preferred Model</label>
+            <label>Select Option </label>
             <select id="leadModel">
-                <option value="Cloud Kitchen (4-6L)">Cloud Kitchen (4-6L)</option>
-                <option value="Smart Kiosk (5-8L)">Smart Kiosk (5-8L)</option>
-                <option value="Retail Outlet (8-12L)">Retail Outlet (8-12L)</option>
+                <option value="Food Related ">Food Related </option>
+                <option value="Order Related ">Order Related </option>
+                <option value="Contact us ">Contact us </option>
             </select>
         </div>
         <button class="submit-wa" onclick="sendToWhatsApp()">Submit on WhatsApp</button>
@@ -292,7 +292,7 @@
 
         if(!name || !city) { alert("Please fill in your details."); return; }
 
-        const message = `Hi Wok n Momo! %0A%0A*${purpose}*%0A*Name:* ${name}%0A*City:* ${city}%0A*Preferred Model:* ${model}%0A%0AI would like to discuss this opportunity further.`;
+        const message = `Hi Wok n Momo! %0A%0A*${purpose}*%0A*Name:* ${name}%0A*City:* ${city}%0A*Select Option:* ${model}%0A%0AI would like to discuss this opportunity further.`;
         window.open(`https://wa.me/919599949996?text=${message}`, '_blank');
         closeModal();
     }
