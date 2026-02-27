@@ -34,7 +34,14 @@
             position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 30px rgba(0,0,0,0.05);
         }
         .logo img { height: 60px; cursor: pointer; }
-        .nav-links { display: flex; align-items: center; gap: 20px; }
+
+        .brand-name-center {
+            position: absolute; left: 50%; transform: translateX(-50%);
+            font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem;
+            color: var(--teal); letter-spacing: 3px; text-transform: uppercase; white-space: nowrap; cursor: pointer;
+        }
+
+        .nav-links { display: flex; align-items: center; gap: 15px; }
         
         .btn-main { 
             padding: 12px 22px; border-radius: 4px; text-decoration: none; font-weight: 700; 
@@ -47,13 +54,12 @@
         .brief-btn { background: var(--gold); color: white; border-color: var(--gold); }
         .brief-btn:hover { background: transparent; color: var(--gold); }
 
-        /* COMMON STYLES */
         .hidden { display: none; }
         section { padding: 100px 10%; position: relative; }
         .label { color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; display: block; margin-bottom: 15px; }
         .title { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin-bottom: 40px; color: var(--teal); line-height: 1.1; }
 
-        /* WHATSAPP MODAL FORM */
+        /* MODAL */
         #leadModal {
             position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000;
             display: none; align-items: center; justify-content: center; padding: 20px;
@@ -62,7 +68,7 @@
             background: white; padding: 40px; border-radius: 8px; width: 100%; max-width: 450px; position: relative;
         }
         .close-modal { position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 1.5rem; color: #999; }
-        .modal-content h3 { font-family: 'Playfair Display', serif; color: var(--teal); margin-bottom: 20px; }
+        .modal-content h3 { font-family: 'Playfair Display', serif; color: var(--teal); margin-bottom: 10px; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 5px; color: #666; }
         .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
@@ -71,7 +77,7 @@
             border-radius: 4px; font-weight: 700; cursor: pointer; text-transform: uppercase; margin-top: 10px;
         }
 
-        /* CUSTOMER VIEW HERO */
+        /* HEROES */
         .hero-cust { 
             height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
@@ -80,13 +86,13 @@
         }
         .order-btn { padding: 18px 40px; border-radius: 4px; text-decoration: none; font-weight: 700; color: white; transition: 0.3s; margin: 10px; text-transform: uppercase; }
 
-        /* INVESTOR VIEW HERO */
         .hero-inv { 
             padding: 160px 10% 120px; color: white;
             background: linear-gradient(rgba(15,76,76,0.92), rgba(15,76,76,0.92)), 
                         url('https://thumbs.dreamstime.com/b/mcdonald-s-restaurant-hong-kong-china-circa-january-counter-service-174373211.jpg');
             background-size: cover; background-position: center;
         }
+        
         .stat-ticker { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
             background: white; border-radius: 8px; margin-top: -80px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
@@ -96,13 +102,10 @@
         .stat-item h4 { font-size: 2.2rem; color: var(--teal); font-family: 'Playfair Display'; margin-bottom: 5px; }
         .stat-item p { font-size: 0.7rem; font-weight: 800; color: #999; text-transform: uppercase; }
 
-        /* INVESTMENT MODELS */
         .model-card { background: var(--teal); color: white; padding: 50px 35px; border-radius: 12px; text-align: center; }
         .model-card.featured { background: var(--gold); transform: scale(1.05); }
         .price { font-size: 2.8rem; font-weight: 700; display: block; margin: 15px 0; }
-        .model-card p { font-size: 0.9rem; opacity: 0.9; line-height: 1.6; }
 
-        /* FLOATING WA */
         .wa-float {
             position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white;
             width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -111,12 +114,8 @@
 
         footer { background: #051a1a; padding: 60px 10%; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.8; }
 
-        @media (max-width: 768px) {
-            .nav-links { gap: 10px; }
-            .btn-main { padding: 10px 12px; font-size: 0.65rem; }
-            .title { font-size: 2.4rem; }
-            .model-card.featured { transform: scale(1); }
-        }
+        @media (max-width: 992px) { .brand-name-center { font-size: 1.2rem; letter-spacing: 1px; } }
+        @media (max-width: 768px) { .brand-name-center { display: none; } .title { font-size: 2.4rem; } .model-card.featured { transform: scale(1); } }
     </style>
 </head>
 <body>
@@ -124,7 +123,9 @@
 <div id="leadModal">
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal()">&times;</span>
-        <h3 id="modalTitle">Franchise Brief Request</h3>
+        <h3 id="modalTitle">Request Form</h3>
+        <p id="modalSub" style="font-size: 0.8rem; color: #666; margin-bottom: 20px;">Please provide your details to proceed.</p>
+        
         <div class="form-group">
             <label>Full Name</label>
             <input type="text" id="leadName" placeholder="Enter your name">
@@ -133,14 +134,25 @@
             <label>City / Location</label>
             <input type="text" id="leadCity" placeholder="Target location">
         </div>
-        <div class="form-group">
-            <label>Select Option </label>
-            <select id="leadModel">
-                <option value="Food Related ">Food Related </option>
-                <option value="Order Related ">Order Related </option>
-                <option value="Contact us ">Contact us </option>
+
+        <div class="form-group" id="groupInvestment">
+            <label>Target Investment Model</label>
+            <select id="leadInvestment">
+                <option value="Cloud Kitchen (4-6L)">Cloud Kitchen (4-6L)</option>
+                <option value="Smart Kiosk (5-8L)">Smart Kiosk (5-8L)</option>
+                <option value="Retail Outlet (8-12L)">Retail Outlet (8-12L)</option>
             </select>
         </div>
+
+        <div class="form-group" id="groupGeneral">
+            <label>Nature of Inquiry</label>
+            <select id="leadGeneral">
+                <option value="Food Related">Food Related</option>
+                <option value="Order Related">Order Related</option>
+                <option value="Contact us">Contact us</option>
+            </select>
+        </div>
+
         <button class="submit-wa" onclick="sendToWhatsApp()">Submit on WhatsApp</button>
         <p style="font-size: 0.6rem; color: #999; margin-top: 15px; text-align: center;">Your message will open in a new WhatsApp window.</p>
     </div>
@@ -148,7 +160,9 @@
 
 <header>
     <div class="logo" onclick="showView('customer')"><img src="Logo 2@4x.PNG" alt="Wok n Momo"></div>
+    <div class="brand-name-center" onclick="showView('customer')">WOK N MOMO</div>
     <div class="nav-links">
+        <a id="briefBtn" class="btn-main brief-btn hidden" onclick="openModal('Franchise Brief Request')">Request Franchise Brief</a>
         <a id="toggleLink" class="btn-main partner-btn" onclick="togglePerspective()">Partner With Us</a>
     </div>
 </header>
@@ -192,7 +206,6 @@
         <span class="label" style="color: var(--gold);">Institutional Growth</span>
         <h1 class="title" style="color: white;">Architecting the Future <br>of Asian QSR.</h1>
         <p style="max-width: 700px; opacity: 0.9; font-size: 1.2rem; margin-bottom: 40px;">Wok n Momo is a high-yield, chef-independent QSR model engineered for national scalability through central kitchen governance.</p>
-        <a class="btn-main brief-btn" style="padding: 15px 28px; font-size: 1rem;" onclick="openModal('Franchise Brief Request')">Request Franchise Brief</a>
     </section>
 
     <div class="stat-ticker" data-aos="zoom-in">
@@ -208,7 +221,7 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
             <div style="background: white; padding: 45px; border-radius: 8px; border-left: 5px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
                 <h3>Centralized Production</h3>
-                <p style="color: #666; margin-top: 15px;">Our proprietary central kitchen eliminates on-site prep, ensuring that a momo in Delhi tastes identical to one in Bangalore.</p>
+                <p style="color: #666; margin-top: 15px;">Our proprietary central kitchen eliminates on-site prep, ensuring consistency across every single territory.</p>
             </div>
             <div style="background: white; padding: 45px; border-radius: 8px; border-left: 5px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
                 <h3>High-Density Fulfillment</h3>
@@ -244,21 +257,9 @@
         <span class="label">Tailored Scaling</span>
         <h2 class="title">Investment Models</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            <div class="model-card">
-                <h3>Cloud Kitchen</h3>
-                <span class="price">4-6L</span>
-                <p>Maximum delivery reach with minimal overhead. Ideal for Tier 1 expansion.</p>
-            </div>
-            <div class="model-card featured">
-                <h3>Smart Kiosk</h3>
-                <span class="price">5-8L</span>
-                <p>The "High-Visibility" model. Perfect for malls, tech parks, and high-street corners.</p>
-            </div>
-            <div class="model-card">
-                <h3>Retail Outlet</h3>
-                <span class="price">8-12 L</span>
-                <p>Complete brand experience with seating. Designed for high-frequency hubs.</p>
-            </div>
+            <div class="model-card"><h3>Cloud Kitchen</h3><span class="price">4-6L</span><p>Maximum delivery reach with minimal overhead. Ideal for Tier 1 expansion..</p></div>
+            <div class="model-card featured"><h3>Smart Kiosk</h3><span class="price">5-8L</span><p>The "High-Visibility" model. Perfect for malls, tech parks, and high-street corners.</p></div>
+            <div class="model-card"><h3>Retail Outlet</h3><span class="price">8-12 L</span><p>Complete brand experience with seating. Designed for high-frequency hubs.</p></div>
         </div>
     </section>
 </div>
@@ -276,32 +277,39 @@
 <script>
     AOS.init({ duration: 1000, once: true });
 
-    // MODAL LOGIC
     function openModal(purpose) {
         document.getElementById('modalTitle').innerText = purpose;
+        const isFranchise = purpose === 'Franchise Brief Request';
+        
+        // CONTEXT-AWARE FORM FIELDS
+        document.getElementById('groupInvestment').style.display = isFranchise ? 'block' : 'none';
+        document.getElementById('groupGeneral').style.display = isFranchise ? 'none' : 'block';
+        
         document.getElementById('leadModal').style.display = 'flex';
     }
-    function closeModal() {
-        document.getElementById('leadModal').style.display = 'none';
-    }
+
+    function closeModal() { document.getElementById('leadModal').style.display = 'none'; }
+
     function sendToWhatsApp() {
         const name = document.getElementById('leadName').value;
         const city = document.getElementById('leadCity').value;
-        const model = document.getElementById('leadModel').value;
         const purpose = document.getElementById('modalTitle').innerText;
+        
+        let choice = "";
+        if (purpose === 'Franchise Brief Request') {
+            choice = `Investment Model: ${document.getElementById('leadInvestment').value}`;
+        } else {
+            choice = `Inquiry Type: ${document.getElementById('leadGeneral').value}`;
+        }
 
         if(!name || !city) { alert("Please fill in your details."); return; }
 
-        const message = `Hi Wok n Momo! %0A%0A*${purpose}*%0A*Name:* ${name}%0A*City:* ${city}%0A*Select Option:* ${model}%0A%0AI would like to discuss this opportunity further.`;
+        const message = `Hi Wok n Momo! %0A%0A*${purpose}*%0A*Name:* ${name}%0A*City:* ${city}%0A*${choice}*%0A%0AI would like to discuss this further.`;
         window.open(`https://wa.me/919599949996?text=${message}`, '_blank');
         closeModal();
     }
 
-    // VIEW LOGIC
-    window.onload = () => {
-        const saved = localStorage.getItem('wnm_view') || 'customer';
-        showView(saved);
-    };
+    window.onload = () => { showView(localStorage.getItem('wnm_view') || 'customer'); };
 
     function togglePerspective() {
         const isCust = !document.getElementById('customerContent').classList.contains('hidden');
@@ -318,13 +326,11 @@
         if (view === 'customer') {
             cust.classList.remove('hidden'); inv.classList.add('hidden');
             tLink.innerText = 'Partner With Us';
-            tLink.style.background = 'var(--teal)';
-            bBtn.classList.add('hidden');
+            if(bBtn) bBtn.classList.add('hidden');
         } else {
             cust.classList.add('hidden'); inv.classList.remove('hidden');
             tLink.innerText = 'Back to Store';
-            tLink.style.background = 'var(--teal)';
-            bBtn.classList.remove('hidden');
+            if(bBtn) bBtn.classList.remove('hidden');
         }
         localStorage.setItem('wnm_view', view);
         AOS.refresh();
