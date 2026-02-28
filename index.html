@@ -27,18 +27,39 @@
     flex-wrap: wrap; /* Allows buttons to drop to next line */
 }
 
-/* Specific Mobile Fix */
-@media (max-width: 480px) {
-    .hero-btn-container {
-        flex-direction: column; /* Stacks them vertically */
-        align-items: center;
-        padding: 0 20px;
-    }
-    .order-btn {
-        width: 100%; /* Full width buttons for easy tapping */
-        max-width: 280px;
-        margin: 5px 0;
-    }
+/* --- OPTIMIZED MOBILE/TABLET RESPONSIVENESS --- */
+        @media (max-width: 992px) { 
+            header {
+                padding: 10px 5%; /* Reduces side padding to give more room */
+            }
+            .brand-name-center { 
+                font-size: 1.2rem; 
+                letter-spacing: 1px; 
+                /* Removes absolute positioning so it doesn't overlap the buttons */
+                position: static; 
+                transform: none;
+                flex-grow: 1;
+                text-align: center;
+            } 
+        }
+
+        @media (max-width: 768px) { 
+            .brand-name-center { 
+                display: none; /* Hides text to keep the sticky header clean on small phones */
+            } 
+            .title { font-size: 2.4rem; } 
+            .model-card.featured { transform: scale(1); } 
+            
+            /* Optimizes logo and buttons to prevent horizontal squeezing */
+            .logo img { height: 50px; } 
+            .nav-links { gap: 10px; }
+            .btn-main { padding: 10px 14px; font-size: 0.7rem; }
+        }
+        @media (max-width: 480px) {
+            /* Handles extremely small screens (like iPhone SE) */
+            .logo img { height: 42px; }
+            .btn-main { padding: 8px 12px; font-size: 0.65rem; }
+        }
 }
         :root {
             --teal: #0F4C4C;
