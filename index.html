@@ -18,6 +18,28 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
+        /* Container to manage button spacing */
+.hero-btn-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows buttons to drop to next line */
+}
+
+/* Specific Mobile Fix */
+@media (max-width: 480px) {
+    .hero-btn-container {
+        flex-direction: column; /* Stacks them vertically */
+        align-items: center;
+        padding: 0 20px;
+    }
+    .order-btn {
+        width: 100%; /* Full width buttons for easy tapping */
+        max-width: 280px;
+        margin: 5px 0;
+    }
+}
         :root {
             --teal: #0F4C4C;
             --teal-dark: #072b2b;
